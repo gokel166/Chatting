@@ -12,7 +12,7 @@ let formatedTimestamp = (Ts) => {
 	return data.toLocaleString();
 }
 
-let listBy = (user, {metas: metas}) = {
+let listBy = (user, {metas: metas}) => {
 	return {
 		user: user,
 		onlineAt: formatedTimestamp(metas[0].online_at)

@@ -3,7 +3,7 @@ defmodule Chatter.RoomChannel do
 	alias Chatter.Presence
 
 	def join("room:lobby", _, socket) do
-		send.self(), :after_join
+		send self(), :after_join
 		{:ok, socket}
 	end
 

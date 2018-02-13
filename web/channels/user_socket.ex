@@ -19,7 +19,7 @@ defmodule Chatter.UserSocket do
   #
   # See `Phoenix.Token` documentation for examples in
   # performing token verification on connect.
-  def connect(%{"user"}, socket) do
+  def connect(%{"user" => user}, socket) do
     {:ok, assign(socket, :user, user)}
   end
 
