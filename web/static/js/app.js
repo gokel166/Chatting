@@ -30,3 +30,16 @@ let render = (presences) => {
 			</li>
 		`)
 }
+
+let room = socket.channel("room:lobby")
+room.on("presence_state", state => {
+	presences = Presence.syncState(presences, state)
+	render(presences)
+});
+
+room.on("presence_diff", diff => {
+	presences = Presence.syncDiff(presences, diff)
+	render(presences)
+});
+
+room.join();
